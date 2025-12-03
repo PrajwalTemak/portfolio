@@ -13,6 +13,15 @@ export default function Education({ education }: EducationProps) {
     })
   }
 
+  // Helper to get link by institution name
+  const getInstitutionLink = (name: string) => {
+    if (name === "Government College of Engineering & Research Avsari")
+      return "https://gcoeara.ac.in/"
+    if (name === "Government Polytechnic, Pune")
+      return "https://www.gppune.ac.in/"
+    return "#"
+  }
+
   return (
     <section id="education" className="section-container bg-gradient-to-b from-white to-slate-50">
       <div className="text-center mb-16">
@@ -29,7 +38,16 @@ export default function Education({ education }: EducationProps) {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">{edu.degree}</h3>
-                  <p className="text-indigo-600 font-semibold mb-2">{edu.institution}</p>
+                  <p className="text-indigo-600 font-semibold mb-2">
+                    <a
+                      href={getInstitutionLink(edu.institution)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      {edu.institution}
+                    </a>
+                  </p>
                   {edu.field_of_study && (
                     <p className="text-gray-600 mb-2">{edu.field_of_study}</p>
                   )}
@@ -59,7 +77,16 @@ export default function Education({ education }: EducationProps) {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">B.E. in Computer Engineering</h3>
-                  <p className="text-indigo-600 font-semibold mb-2">Government College of Engineering & Research Avsari</p>
+                  <p className="text-indigo-600 font-semibold mb-2">
+                    <a
+                      href="https://gcoeara.ac.in/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      Government College of Engineering & Research Avsari
+                    </a>
+                  </p>
                   <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
                     <span>2023 - 2026</span>
                   </div>
@@ -73,7 +100,16 @@ export default function Education({ education }: EducationProps) {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">Diploma in Information Technology</h3>
-                  <p className="text-indigo-600 font-semibold mb-2">Government Polytechnic, Pune</p>
+                  <p className="text-indigo-600 font-semibold mb-2">
+                    <a
+                      href="https://www.gppune.ac.in/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      Government Polytechnic, Pune
+                    </a>
+                  </p>
                   <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
                     <span>2020 - 2023</span>
                     <span className="font-semibold text-indigo-600">Percentage: 93.67%</span>
