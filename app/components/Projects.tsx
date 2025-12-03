@@ -184,7 +184,6 @@ export default function Projects({ projects }: ProjectsProps) {
               {project.project_url && (
                 <a
                   href={project.project_url}
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:scale-105 shadow-md hover:shadow-lg"
                 >
