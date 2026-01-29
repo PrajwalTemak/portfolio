@@ -8,9 +8,9 @@ interface StatisticsProps {
 }
 
 export default function Statistics({ 
-  projectsCount = 2, 
-  yearsExperience = 2, 
-  contributions = 500,
+  projectsCount = 10, 
+  yearsExperience = 1, 
+  contributions = 400,
   connections = 300 
 }: StatisticsProps) {
   const stats = [
